@@ -1,2 +1,530 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cats Website</title>
+    <style>
+      
+      * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;  
+  position: relative;
+}
+
+.menu {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 250px;
+  transition: 0.5s;
+}
+
+.menu ul {
+  list-style: none; 
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu li {
+  /* display: inline; */
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+  text-decoration: none;
+}
+
+.menu a {
+  text-decoration: none;
+}
+
+#burger-toggle:checked ~ .menu {
+  display: block;
+  right: 0px;
+}
+
+.burger .line {
+  width: 30px;
+  height: 4px;
+  background-color: #333;
+  margin: 5px 0;
+}
+
+#burger-toggle {
+  display: none;
+}
+
+.burger {
+  display: none;
+  position: absolute;
+  right: 0px;
+  z-index: 1
+}
+
+@media (max-width: 100vw) {
+  .burger {
+    display: block;
+  }  
+  
+  .menu {
+    /* display: none; */
+    background: #464646; 
+/*     z-index: 10; */    
+      /* right: -100%; */
+      display: none;
+  }  
+  
+  .menu li {
+    display: block;
+  }
+  
+  .menu ul {
+    display: flex;
+    flex-direction: column;
+  }  
+}
+
+
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        footer {
+            background-color: black;
+            padding: 5px;
+        }
+
+        nav a {
+
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        /* .container {
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        } */
+
+        /* selector list */
+        h1 {
+            padding-top: 20px;
+            text-align: center;
+            color: black;
+        }
+        h2 {
+            padding-top: 20px;
+            text-align: center;
+            color: black;
+            font-size: 60px;
+        }
+        h3 {
+            font-size: 30px;
+            padding: 10px;
+        }
+
+        /* compound selector */
+        p.r {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #666;
+        }
+
+        /* descendant selector */
+        div p {
+            text-align: left;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .cat-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .cat-gallery img {
+            width: 68%;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            gap: 50px;
+
+        }
+
+        .cat-breeds {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px;
+            gap: 50px;
+        }
+
+        .breed-item {
+        display: flex;
+        align-items: center;
+        margin: 20px;
+        gap: 100px;
+        }
+        
+        .breed-item img {
+            max-width: 50%;
+        }
+
+        .breed-info {
+        max-width: 50%;
+        }
+
+        .reverse {
+        flex-direction: row-reverse;
+        background-color: rgb(223, 223, 223);
+        }
+        .reverse p {
+            text-align: right;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            gap: 50px;
+        }
+
+        .cat-breeds div {
+            width: 58%;
+            text-align: center;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        header2 {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+ 
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(pictures/background2.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .img-header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            max-width: 900px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            padding: 20px;
+            font-size: 120px;
+            color: wheat;
+        }
+
+        .hero div {
+            font-size: 20px;
+            text-align: center;
+            color:beige;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+
+
+        .explore-button {
+            background-color: red;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 40px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            /* Add rounded corners */
+            transition: background-color 0.3s ease;
+            /* Add a smooth transition effect for background color */
+        }
+
+        .explore-button:hover {
+            background-color: darkred;
+            /* Change button color on hover */
+        }
+
+        #contact {
+            background-image: url(pictures/background.jpg);
+            background-size: cover;
+            background-position: center;
+            color: black;
+        }
+        #breeds {
+            background-color: bisque;
+        }
+        
+        #gallery {
+            justify-content: center;
+         }
+    </style>
+</head>
+
+<body>
+  
+  <input type="checkbox" id="burger-toggle">
+  <label for="burger-toggle" class="burger">
+
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div> 
+  </label>
+  
+  <nav class="menu">
+    <ul>
+      <li><a href="#breeds">Cat Breeds</a></li>
+        <li><a href="#gallery">Cat Gallery</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="README.md">Read Me</a></li>      
+    </ul>
+  </nav>
+  <!-- 
+
+    <header>
+        <h1>Welcome to the Cats Website</h1>
+    </header>
+
+    <nav style="display: flex; justify-content: space-between; align-items: center; position: absolute; width: 100%; background-color: black;">
+    <a><img width=70px, height=70px, src="pictures/cat_logo.png"></a>
+    <div class="burger-menu" onclick="toggleNav()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#breeds">Cat Breeds</a></li>
+        <li><a href="#gallery">Cat Gallery</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="README.md">Read Me</a></li>
+    </ul>
+</nav>
+<div id="nav-overlay"></div> -->
+
+
+    <section class="hero">
+        <div class="img-header">
+            <h1>Cats Gallery</h1>
+            <div>On this Cats Website, we aim to celebrate the beauty and wonder of cats. Explore our collection of cat
+                breeds, enjoy adorable cat photos in our gallery, and connect with fellow cat enthusiasts. Join us in
+                embracing the love for these magnificent creatures.
+            </div>
+            <button id="exploreButton" class="explore-button">Explore</button>
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+
+    <!-- <section id="about">
+        <h2>About Cats</h2>
+        <p class="r">Cats are beloved pets known for their agility, independence, and playful nature. They have been
+            companions to humans for thousands of years, and their charm continues to captivate people worldwide.
+        </p>
+    </section> -->
+
+    <section id="breeds">
+        <h2>Cat Breeds</h2>
+        <div class="cat-breeds">
+            <div class="breed-item">
+                <img src="pictures/cats/Persian.jpg" alt="Persian">
+                <div class="breed-info">    
+                <h3>Persian</h3>
+                <p>Big round eyes inside a round face give Persians their unmistakable look. Add in the flat face
+                    and the distinctive profile, or smushed nose, and you know you’ve found a gorgeous, soft,
+                    sweet-tempered Persian cat. </p>
+                </div>
+            </div>
+        </div>
+    
+            <div class="cat-breeds reverse">
+                <div class="breed-item reverse">
+                    <img src="pictures/cats/Siamese.jpg" alt="Siamese">
+                    <div class="breed-info">
+                        <h3>Siamese</h3>
+                        <p>Long and slender, Siamese may have an elongated, wedged-shaped face or a rounder, apple-shaped
+                            one. Their ears, noses, paws, and tails come in complementary colours that offset their
+                            cream-coloured bodies. With their short hair, they don’t require the combing and care that a
+                            longhaired cat needs. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="cat-breeds">
+                <div class="breed-item">
+                    <img src="pictures/cats/Maine Coon.jpg" alt="Maine Coon">
+                    <div class="breed-info">    
+                    <h3>Maine Coon</h3>
+                    <p>The gentle giants of the cat world, Maine Coons are magnificent when they reach their tallest
+                        height of 16 inches, length of up to 100 cm (40 in) and weigh in at 3.6-8.2 kg (7-18 lbs) or
+                        more. They have lovely tufts of fur in their ears and under their paws, a square face and a big
+                        fluffy tail. </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cat-breeds reverse">
+                <div class="breed-item reverse">
+                    <img src="pictures/cats/Ragdoll.jpg" alt="Ragdoll">
+                    <div class="breed-info">
+                        <h3>Ragdoll</h3>
+                        <p>Graceful and intelligent, Ragdolls are mild-mannered and sweet. Their large, striking blue eyes
+                            are discerning as well as affectionate. Growing to anywhere between 6-9 kg (15-20 lbs), it takes
+                            these long-haired beauties about three years to reach full maturity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div>
+                <img src="pictures/cats/Bengal.jpg" alt="Bengal">
+                <p>Bengal</p>
+                <p>Bengal cats have become very popular because they look like miniature (3.6-7 kg [8-15 lb])
+                    leopards. Like Abyssinians, they are extremely curious and inquisitive. Without a lot of
+                    attention and things to do to stay busy, they can become bored or frustrated which might lead to
+                    undesirable behaviours. This is a breed of cat that loves water and may decide to go fishing in
+                    your aquarium. While gorgeous, they are definitely not suited to every home.</p>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- <section id="gallery">
+        <h2>Cat Gallery</h2>
+         <p>Enjoy these adorable pictures of cats:</p> 
+        <button id="toggleGalleryButton">
+            <h4>Enjoy these adorable pictures of cats:</h4>
+        </button>
+        <div class="cat-gallery">
+            <img src="pictures/gallery/cute_cat1.jpg" alt="Cat 1">
+            <img src="pictures/gallery/cute_cat2.jpg" alt="Cat 2">
+            <img src="pictures/gallery/cute_cat3.jpg" alt="Cat 3">
+            <img src="pictures/gallery/cute_cat4.jpg" alt="Cat 4">
+            <img src="pictures/gallery/cute_cat5.jpg" alt="Cat 5">
+            <img src="pictures/gallery/cute_cat6.jpg" alt="Cat 6">
+        </div>
+    </section> -->
+
+    <section id="contact" style="background-color: #f9f9f9; padding: 30px; text-align: center;">
+        <h2 style="color: black; font-size: 32px; margin-bottom: 20px;">Contact Us</h2>
+        <p style="font-size: 18px; color: black; margin-bottom: 10px;">
+            If you have any questions or would like to share pictures of your cat, feel free to get in touch with us.
+        </p>
+        <a href="mailto:cats@example.com" style="text-decoration: none; color: #007BFF; font-size: 20px; font-weight: bold;">
+            <i class="far fa-envelope"></i> Email us: cats@example.com
+        </a>
+    </section>
+    
+    <script>
+        // Get the button and the gallery div by their IDs
+        const toggleGalleryButton = document.getElementById("toggleGalleryButton");
+        const catGallery = document.querySelector(".cat-gallery");
+
+        // Add a click event listener to the button
+        toggleGalleryButton.addEventListener("click", () => {
+            // Toggle the display property of the cat-gallery div
+            if (catGallery.style.display === "none" || catGallery.style.display === "") {
+                catGallery.style.display = "block";
+            } else {
+                catGallery.style.display = "none";
+            }
+        });
+    </script>
+
+    <script>
+        // Get a reference to the button and the target section by their IDs
+        const exploreButton = document.getElementById('exploreButton');
+        const breeds = document.getElementById('breeds');
+
+        // Add a click event listener to the button
+        exploreButton.addEventListener('click', () => {
+            // Scroll to the target section with smooth behavior
+            breeds.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+  
+    
+    <script>
+    function toggleNav() {
+    const navOverlay = document.getElementById('nav-overlay');
+    const burgerMenu = document.querySelector('.burger-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navOverlay.style.display === 'block') {
+        navOverlay.style.display = 'none';
+        navLinks.style.display = 'none';
+    } else {
+        navOverlay.style.display = 'block';
+        navLinks.style.display = 'flex';
+    }
+
+    burgerMenu.classList.toggle('change');
+}
+      </script>
+
+
+
+</body>
+
+</html>
