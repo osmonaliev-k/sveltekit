@@ -74,7 +74,7 @@ body {
   
   .menu {
     /* display: none; */
-    background: #464646; 
+    background-color: black; 
 /*     z-index: 10; */    
       /* right: -100%; */
       display: none;
@@ -260,7 +260,7 @@ body {
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: url(pictures/background2.jpg);
+            background-image: url(background2.jpg);
             background-size: cover;
             background-position: center;
         }
@@ -310,7 +310,7 @@ body {
         }
 
         #contact {
-            background-image: url(pictures/background.jpg);
+            background-image: url(background.jpg);
             background-size: cover;
             background-position: center;
             color: black;
@@ -350,7 +350,7 @@ body {
     </header>
 
     <nav style="display: flex; justify-content: space-between; align-items: center; position: absolute; width: 100%; background-color: black;">
-    <a><img width=70px, height=70px, src="pictures/cat_logo.png"></a>
+    <a><img width=70px, height=70px, src="static/cat_logo.png"></a>
     <div class="burger-menu" onclick="toggleNav()">
         <div class="bar"></div>
         <div class="bar"></div>
@@ -391,7 +391,7 @@ body {
         <h2>Cat Breeds</h2>
         <div class="cat-breeds">
             <div class="breed-item">
-                <img src="pictures/cats/Persian.jpg" alt="Persian">
+                <img src="cats/Persian.jpg" alt="Persian">
                 <div class="breed-info">    
                 <h3>Persian</h3>
                 <p>Big round eyes inside a round face give Persians their unmistakable look. Add in the flat face
@@ -403,7 +403,7 @@ body {
     
             <div class="cat-breeds reverse">
                 <div class="breed-item reverse">
-                    <img src="pictures/cats/Siamese.jpg" alt="Siamese">
+                    <img src="cats/Siamese.jpg" alt="Siamese">
                     <div class="breed-info">
                         <h3>Siamese</h3>
                         <p>Long and slender, Siamese may have an elongated, wedged-shaped face or a rounder, apple-shaped
@@ -415,7 +415,7 @@ body {
             </div>
             <div class="cat-breeds">
                 <div class="breed-item">
-                    <img src="pictures/cats/Maine Coon.jpg" alt="Maine Coon">
+                    <img src="cats/Maine Coon.jpg" alt="Maine Coon">
                     <div class="breed-info">    
                     <h3>Maine Coon</h3>
                     <p>The gentle giants of the cat world, Maine Coons are magnificent when they reach their tallest
@@ -428,7 +428,7 @@ body {
 
             <div class="cat-breeds reverse">
                 <div class="breed-item reverse">
-                    <img src="pictures/cats/Ragdoll.jpg" alt="Ragdoll">
+                    <img src="cats/Ragdoll.jpg" alt="Ragdoll">
                     <div class="breed-info">
                         <h3>Ragdoll</h3>
                         <p>Graceful and intelligent, Ragdolls are mild-mannered and sweet. Their large, striking blue eyes
@@ -439,7 +439,7 @@ body {
             </div>
 
             <!-- <div>
-                <img src="pictures/cats/Bengal.jpg" alt="Bengal">
+                <img src="Bengal.jpg" alt="Bengal">
                 <p>Bengal</p>
                 <p>Bengal cats have become very popular because they look like miniature (3.6-7 kg [8-15 lb])
                     leopards. Like Abyssinians, they are extremely curious and inquisitive. Without a lot of
@@ -447,22 +447,22 @@ body {
                     undesirable behaviours. This is a breed of cat that loves water and may decide to go fishing in
                     your aquarium. While gorgeous, they are definitely not suited to every home.</p>
             </div> -->
-        </div>
+        
     </section>
 
     <!-- <section id="gallery">
         <h2>Cat Gallery</h2>
-         <p>Enjoy these adorable pictures of cats:</p> 
+         <p>Enjoy these adorable static of cats:</p> 
         <button id="toggleGalleryButton">
-            <h4>Enjoy these adorable pictures of cats:</h4>
+            <h4>Enjoy these adorable static of cats:</h4>
         </button>
         <div class="cat-gallery">
-            <img src="pictures/gallery/cute_cat1.jpg" alt="Cat 1">
-            <img src="pictures/gallery/cute_cat2.jpg" alt="Cat 2">
-            <img src="pictures/gallery/cute_cat3.jpg" alt="Cat 3">
-            <img src="pictures/gallery/cute_cat4.jpg" alt="Cat 4">
-            <img src="pictures/gallery/cute_cat5.jpg" alt="Cat 5">
-            <img src="pictures/gallery/cute_cat6.jpg" alt="Cat 6">
+            <img src="static/gallery/cute_cat1.jpg" alt="Cat 1">
+            <img src="static/gallery/cute_cat2.jpg" alt="Cat 2">
+            <img src="static/gallery/cute_cat3.jpg" alt="Cat 3">
+            <img src="static/gallery/cute_cat4.jpg" alt="Cat 4">
+            <img src="static/gallery/cute_cat5.jpg" alt="Cat 5">
+            <img src="static/gallery/cute_cat6.jpg" alt="Cat 6">
         </div>
     </section> -->
 
